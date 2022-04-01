@@ -71,17 +71,10 @@ def show_reports():
         case 0:
             return
         case 1:
-            # TODO: mongodb->debit cash and cogs, credit inventory, and revenue
-            print("\nTransaction was recorded succesfully!")   
+            mdb.view_ledger()  
         case 2:
-            mdb.view_ledger()
+            
         case 3:
-            # TODO: mongodb->debit acc receivables and cogs, credit inventory, and revenue
-            print("\nTransaction was recorded succesfully!")
-        case 4:
-            # TODO: mongodb->debit acc receivables and cogs, credit inventory, and revenue
-            print("\nTransaction was recorded succesfully!")
-        case 5:
             # TODO: mongodb->debit acc receivables and cogs, credit inventory, and revenue
             print("\nTransaction was recorded succesfully!")
         case _:
