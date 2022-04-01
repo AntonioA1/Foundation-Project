@@ -19,7 +19,7 @@ def shirt():
 def get_units():
     while True:
         try:
-            val = int(input("\n Please enter number of units: "))
+            val = int(input("\n Please enter number: "))
             if (val > 0):
                 return val
             else:
