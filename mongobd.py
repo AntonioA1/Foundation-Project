@@ -27,22 +27,22 @@ def credit_sale():
     item_id = shirt()
     units = get_units()
     item = inv.find_one({"_id" : item_id})    
-    customer_id = input("\tPlease enter customer id (C1, C2, C3, C4 or C5): ")
-    if customer_id in ['C1', 'C2', 'C3', 'C4', 'C5']:
-        customer = cust.find_one({"_id" : customer_id})  
-        cust_name = customer['Name']  
-        price = item['Price']
-        cost = item['Cost']
-        amount = units*price
-        cogs = units*cost
-        doc = [{"Account" : "Accounts Receivables", "Debit" : amount, "Credit" : 0, "name" : cust_name},
-                {"Account" : "Revenue", "Debit" : 0, "Credit" : amount},
-                {"Account" : "COGS", "Debit" : cogs, "Credit" : 0},
-                {"Account" : "Inventory", "Debit" : 0, "Credit" : cogs}]
-        ledger.insert_many(doc)
-        print("\nTransaction was recorded succesfully!")
-    else:
-        print("\nTransaction was not recorded!")
+    customer_id = input("\tPlease enter customer id: ")
+    #if customer_id in ['C1', 'C2', 'C3', 'C4', 'C5']:
+    customer = cust.find_one({"_id" : customer_id})  
+    cust_name = customer['Name']  
+    price = item['Price']
+    cost = item['Cost']
+    amount = units*price
+    cogs = units*cost
+    doc = [{"Account" : "Accounts Receivables", "Debit" : amount, "Credit" : 0, "name" : cust_name},
+            {"Account" : "Revenue", "Debit" : 0, "Credit" : amount},
+            {"Account" : "COGS", "Debit" : cogs, "Credit" : 0},
+            {"Account" : "Inventory", "Debit" : 0, "Credit" : cogs}]
+    ledger.insert_many(doc)
+    print("\nTransaction was recorded succesfully!")
+    # else:
+    #     print("\nTransaction was not recorded!")
 
 def cash_purchase():
     print("\nPlease select item and input quantity: \n")
