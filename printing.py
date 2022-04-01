@@ -11,6 +11,7 @@ def menu():
     print("4. Record Receibables/Payables")
     print("5. View Reports")
     print("6. Manage Clients")
+    print("7. Load Data")
     print("0. Exit")
 
     return (v.validate_int(input("\nPlease select one option: ")))

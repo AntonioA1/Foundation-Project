@@ -119,6 +119,10 @@ def delete_cust():
     name = input("\nPlease enter customer Name: ")
     cust.delete_one({"Name" : name})
 
+def load_data_to_db(file_name, file_data):
+    collection = cust if file_name == 'Customers' else inv
+    collection.insert_many(file_data)
+def
 #if __name__ == "__main__":
 #    view_ledger()
 
@@ -128,4 +132,3 @@ def delete_cust():
 # vaina = coll.find()
 # for doc in vaina:
 #     print(doc)
-

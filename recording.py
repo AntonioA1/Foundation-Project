@@ -1,6 +1,8 @@
+from asyncore import write
 import mongobd as mdb
 import printing as p
 import validatation as v
+import json
 
 def record_sale():
     p.sale_print()
@@ -105,3 +107,14 @@ def record_customer_changes():
         
     return True
 
+def load_data():
+    file_name = input("\nPlease provide Data to load: Customers or Inv_Shirts ")
+    if file_name in ['Customers', 'Inv_Shirts']:
+        file_path = f'data/{file_name}.json'    
+        with open(file_path, 'r') as file:
+            file_data = json.load(file)
+        
+        mdb.load_data_to_db(file_name, file_data)
+        print("\nData lodaded succesfullly! \n")
+    else:
+        print("\nInvalid file name, going back to main menu... ")

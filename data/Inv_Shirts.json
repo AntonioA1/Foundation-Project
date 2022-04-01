@@ -1,0 +1,5 @@
+[
+    {"_id" : 1, "color" : "Blue",  "Supplier" : {"_id" : "S1", "Name" : "Supplier 1"}, "Cost" : 3, "Price" : 5},
+    {"_id" : 2, "color" : "Red",   "Supplier" : {"_id" : "S2", "Name" : "Supplier 2"}, "Cost" : 4, "Price" : 6},
+    {"_id" : 3, "color" : "Black", "Supplier" : {"_id" : "S3", "Name" : "Supplier 3"}, "Cost" : 5, "Price" : 7}
+]

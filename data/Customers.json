@@ -1,0 +1,7 @@
+[
+    {"_id" : "C1", "Name" : "Customer 1"}, 
+    {"_id" : "C2", "Name" : "Customer 2"}, 
+    {"_id" : "C3", "Name" : "Customer 3"}, 
+    {"_id" : "C4", "Name" : "Customer 4"}, 
+    {"_id" : "C5", "Name" : "Customer 5"}
+]

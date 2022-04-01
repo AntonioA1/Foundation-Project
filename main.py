@@ -24,6 +24,8 @@ def main():
                 clear_screen = False
             case 6:
                 clear_screen = r.record_customer_changes()
+            case 7:
+                r.load_data()
             case _:
                 print("\nInvalid input, please try again.\n")
         if clear_screen:
