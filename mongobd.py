@@ -55,6 +55,7 @@ def cash_purchase():
             {"Account" : "Cash", "Debit" : 0, "Credit" : amount}]
     ledger.insert_many(doc)
 
+
 def credit_purchase():
     print("\nPlease select item and input quantity: \n")
     item_id = shirt()
