@@ -1,4 +1,3 @@
-from asyncore import write
 import mongobd as mdb
 import printing as p
 import validatation as v
@@ -73,10 +72,7 @@ def show_reports():
         case 1:
             mdb.view_ledger()  
         case 2:
-            
-        case 3:
-            # TODO: mongodb->debit acc receivables and cogs, credit inventory, and revenue
-            print("\nTransaction was recorded succesfully!")
+            mdb.view_inc_stmt()
         case _:
             print("\nInvalid input, you will go back to the main menu\n")
 

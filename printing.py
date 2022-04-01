@@ -43,8 +43,7 @@ def deferrals_print():
 def reports_print():
     print("\nOk, Lets Take a look at the Reports. Which one would you like to take a look at?\n")
     print("1. Ledger")
-    print("2. Balance Sheet")
-    print("3. Income Statement")
+    print("2. Income Statement")
     print("0. Go Back to main Menu")
 
 def customer_print():

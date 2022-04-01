@@ -122,13 +122,23 @@ def delete_cust():
 def load_data_to_db(file_name, file_data):
     collection = cust if file_name == 'Customers' else inv
     collection.insert_many(file_data)
-def
-#if __name__ == "__main__":
-#    view_ledger()
 
-# for coll in db.list_collection_names():
-#     print(coll)
-
-# vaina = coll.find()
-# for doc in vaina:
-#     print(doc)
+def view_inc_stmt():
+    rev = ledger.aggregate(
+        [{"$match" : { "Account" : "Revenue"}},    
+            {"$group" : {"_id" : "$Account",
+            "Total Credit" : {"$sum" : "$Credit"}}}
+        ])
+    exp = ledger.aggregate(
+        [{"$match" : { "Account" : "COGS"}},    
+            {"$group" : {"_id" : "$Account",
+            "Total Debit" : {"$sum" : "$Debit"}}}
+        ])
+    for item in rev:
+        revenue = int(item.get('Total Credit'))
+    for item in exp:
+        expense = int(item.get('Total Debit'))
+    print("\nINCOME STATEMENT")
+    print("\nTotal Revenue = " + str(revenue) )
+    print("Total Expenses = " + str(expense) )
+    print("\nProfit is Equal to " + str(revenue-expense) + "\n" )
